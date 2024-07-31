@@ -1,11 +1,13 @@
 "use client";
 
-// my function
-import convertToSubcurrency from "@/lib/convertToSubcurrency";
+// components
+import CheckoutPage from "@/components/CheckoutPage";
 
 // stripe
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+
+import convertToSubcurrency from "@/lib/convertToSubcurrency";
 
 // making sure public key is not undefined
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY == undefined) {
@@ -35,7 +37,9 @@ export default function Home() {
           amount: convertToSubcurrency(amount),
           currency: "usd",
         }}
-      ></Elements>
+      >
+        <CheckoutPage amount={amount} />
+      </Elements>
     </main>
   );
 }
