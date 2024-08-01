@@ -21,7 +21,7 @@ export default function Home() {
   const amount = 49.99;
 
   return (
-    <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gray-600">
+    <main className="max-w-3xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gray-600">
       <div className="mb-10">
         <h1 className="text-4xl font-extrabold mb-2">Tea</h1>
         <h2 className="text-2xl">

@@ -53,7 +53,7 @@ export default function CheckoutPage({ amount }: { amount: number }) {
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `http://localhost:3000/payment-sucess?amount=${amount}`,
+        return_url: `http://localhost:3000/payment-success?amount=${amount}`,
       },
     });
 
@@ -83,9 +83,11 @@ export default function CheckoutPage({ amount }: { amount: number }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-md">
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-md">
       {clientSecret && <PaymentElement />}
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && (
+        <p className="my-4 text-pretty text-gray-600 text-sm">{errorMessage}</p>
+      )}
       <button
         disabled={!stripe || loading}
         className="text-white w-full p-5 bg-black mt-2 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse"
