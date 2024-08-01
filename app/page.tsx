@@ -7,6 +7,7 @@ import CheckoutPage from "@/components/CheckoutPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
+// helper function
 import convertToSubcurrency from "@/lib/convertToSubcurrency";
 
 // making sure public key is not undefined
@@ -20,7 +21,7 @@ export default function Home() {
   const amount = 49.99;
 
   return (
-    <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-black">
+    <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gray-600">
       <div className="mb-10">
         <h1 className="text-4xl font-extrabold mb-2">Tea</h1>
         <h2 className="text-2xl">
